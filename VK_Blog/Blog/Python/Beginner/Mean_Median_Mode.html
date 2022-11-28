@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mean, Median and Mode in Python3</title>
+
+    <!--Favicon-->
+    <link rel="icon" href="/img/logo.ico" type="image/x-icon">
+
+    <!-- font awesome icons cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous" />
+
+    <!-- swiper slider css file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.5/swiper-bundle.min.css"
+        integrity="sha512-m3pAvNriL711NMlhkZHK6K4Tu2/RjtrzyjxZU8mlAbxxoDoURy27KajN1LGTLeEEPvaN12mKAgSCrYEwF9y0jA=="
+        crossorigin="anonymous" />
+
+    <!-- custom style.css file -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- snippets for color html -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css">
+
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header id="header" class="headerbg">
+        <nav class="container navbar">
+            <a href="/CyberGuru" class="nav-brand text-dark">
+                <img src="/img/logo.png" class="logo">
+            </a>
+
+            <!-- toggle button -->
+            <button class="toggle-button">
+                <span><i class="fas fa-bars"></i></span>
+            </button>
+
+            <!-- collapse on toggle button click -->
+            <div class="collapse">
+                <ul class="navbar-nav">
+                    <a href="/CyberGuru" class="nav-link">Home</a>
+                    <a href="/CyberGuru/#Blogpost" class="nav-link">Blog</a>
+                </ul>
+            </div>
+
+            <!-- collapse on toggle button click -->
+            <div class="collapse">
+                <ul class="navbar-nav">
+                    <a href="https://www.youtube.com/channel/UCP3Go8fWw7Ywu8r-CL_kKeg" class="nav-link"><i
+                            class="fab fa-youtube"></i></a>
+                    <a href="https://github.com/cyb3rGuru" class="nav-link"><i class="fab fa-github"></i></a>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- .Header -->
+
+    <!-- Main Site -->
+    <main id="site-main">
+
+        <!-- Post Content -->
+        <section class="container">
+            <article id="post">
+                <!-- article heading -->
+                <div class="headings text-center">
+                    <div style="margin-top: 150px;"></div>
+                    <div class="title">
+                        <h2 class="text-title text-dark display-1">Mean, Median and Mode in Python3</h2>
+                    </div>
+
+                    <div class="meta">
+                        <p class="link display-2 text-secondary px-1"><i class="fas fa-clock text-primary"></i> Released
+                            Date: 11/27/2022</p>
+                    </div>
+
+                </div>
+
+                <!-- thumbnail  -->
+                <div class="thumbnail mt-3">
+                    <img src="/img/Python/Mean_Median_Mode.jpg" class="thumbnail" alt="Kali-Linux Img">
+                </div>
+
+                <!-- content -->
+                <div class="text-dark display-2 secondary-title mt-3 div container">
+
+
+                    <h2>Mean, Median and Mode in Python3: Let's get started</h2>
+                    <p>
+                    <h3> Mean</h3>
+                    <p>
+                        The mean is the average value of all the values in a dataset. To calculate the mean value of a
+                        dataset, we first need to find the sum of all the values and then divide the sum of all the
+                        values by the total number of values.
+
+                    </p>
+                    <h3> Median</h3>
+                    <p>
+                        The Median is the middle value among all the values in sorted order. Here we need to calculate
+                        the mid-value of all the values in a dataset. But before calculating the Median, we need to
+                        arrange all the values in sorted order. There are two different ways of calculating the median
+                        value:<br>
+                        <img src="/img/Python/Median_Formula.png">
+                    </p>
+                    </p>
+                    <h2>Let's get coding done! 💻</h2>
+                    <p>
+                    <pre><code class="has-line-data" data-line-start="1" data-line-end="46" class="language-python"><span class="hljs-comment"># Python3.10</span>
+
+<span class="hljs-comment"># Project: Calculate Mean, Median and Mode in python3</span>
+
+<span class="hljs-comment"># function for Mean</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">mean</span><span class="hljs-params">(array_int)</span>:</span>
+    
+    result = sum(array_int)/len(array_int)
+    <span class="hljs-keyword">return</span> result
+
+
+<span class="hljs-comment"># function for Median</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">median</span><span class="hljs-params">(array_int)</span>:</span>
+
+    array_int.sort()
+
+    <span class="hljs-keyword">if</span> len(array_int) % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>:
+        median = array_int[len(array_int)//<span class="hljs-number">2</span>]
+        median2 = array_int[len(array_int)//<span class="hljs-number">2</span> -<span class="hljs-number">1</span>]
+        median = (median + median2)/<span class="hljs-number">2</span>
+    <span class="hljs-keyword">else</span>:
+        median = array_int[len(array_int)//<span class="hljs-number">2</span>]
+    <span class="hljs-keyword">return</span> median
+
+<span class="hljs-comment"># function for mode</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">mode</span><span class="hljs-params">(array_int)</span>:</span>
+
+    freq = {}
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> array_int:
+        freq.setdefault(i,<span class="hljs-number">0</span>)
+        freq[i]+=<span class="hljs-number">1</span>
+    
+    frequent = max(freq.values())
+    <span class="hljs-keyword">for</span> i, j <span class="hljs-keyword">in</span> freq.items():
+        <span class="hljs-keyword">if</span> j == frequent:
+            result = i
+    <span class="hljs-keyword">return</span> result
+
+list1 = [<span class="hljs-number">12</span>, <span class="hljs-number">16</span>, <span class="hljs-number">20</span>, <span class="hljs-number">20</span>, <span class="hljs-number">12</span>, <span class="hljs-number">30</span>, <span class="hljs-number">25</span>, <span class="hljs-number">23</span>, <span class="hljs-number">24</span>, <span class="hljs-number">20</span>]
+print(f<span class="hljs-string">"Finding Mean, Median and Mode for{ list1}"</span>)
+print(f<span class="hljs-string">"Mean: {mean(list1)} "</span>)
+print(f<span class="hljs-string">"Median: {median(list1)}"</span>)
+print(f<span class="hljs-string">"Mode: {mode(list1)}"</span>)
+</code></pre>
+                    <br>
+                    <b>Result: </b><br>
+                    <i>Finding Mean, Median and Mode for[12, 16, 20, 20, 12, 30, 25, 23, 24, 20]<br>
+                        Mean: 20.2 <br>
+                        Median: 20.0<br>
+                        Mode: 20</i>
+
+                    </p>
+                    <br>
+                    <h2> Study the Code 🔎</h2>
+                    <p>
+                        So, without using a library or an built-in Python module, this is how you can compute mean,
+                        mid-value, and mode using Python.
+                        One of the greatest programming languages for performing mathematical computations is Python.
+                        In order to compute mean, median, and mode in Python without utilizing any built-in Python
+                        libraries or modules, you should be aware of how to do so.
+                        I hope you enjoyed reading this article on using Python to calculate mean, median, and mode.
+                    </p>
+
+                </div>
+            </article>
+
+        </section>
+        <!-- .Post Content -->
+
+    </main>
+    <!-- .Main Site -->
+
+
+    <!-- footer-->
+    <footer id="footer">
+        <!--copyrights-->
+        <div class="copyrights">
+            <p class="text-center text-secondary display-2">
+                © 2022 <a href="#" class="text-primary">VK-Information</a> - Cybersecurity Blog. All rights reserved.
+            </p>
+        </div>
+    </footer>
+    <!-- .footer -->
+
+    <!-- custom javascript main.js file -->
+    <script src="/main.js"></script>
+</body>
+
+</html>

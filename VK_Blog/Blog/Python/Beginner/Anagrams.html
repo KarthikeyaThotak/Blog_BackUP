@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Gussing Game in Python3</title>
+
+    <!--Favicon-->
+    <link rel="icon" href="/img/logo.ico" type="image/x-icon">
+
+    <!-- font awesome icons cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous" />
+
+    <!-- swiper slider css file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.5/swiper-bundle.min.css"
+        integrity="sha512-m3pAvNriL711NMlhkZHK6K4Tu2/RjtrzyjxZU8mlAbxxoDoURy27KajN1LGTLeEEPvaN12mKAgSCrYEwF9y0jA=="
+        crossorigin="anonymous" />
+
+    <!-- custom style.css file -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- snippets for color html -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css">
+
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header id="header" class="headerbg">
+        <nav class="container navbar">
+            <a href="/index.html" class="nav-brand text-dark">
+                <img src="/img/logo.png" class="logo">
+            </a>
+
+            <!-- toggle button -->
+            <button class="toggle-button">
+                <span><i class="fas fa-bars"></i></span>
+            </button>
+
+            <!-- collapse on toggle button click -->
+            <div class="collapse">
+                <ul class="navbar-nav">
+                    <a href="/index.html" class="nav-link">Home</a>
+                    <a href="/index.html/#Blogpost" class="nav-link">Blog</a>
+                </ul>
+            </div>
+
+            <!-- collapse on toggle button click -->
+            <div class="collapse">
+                <ul class="navbar-nav">
+                    <a href="https://www.youtube.com/@vkinformationofficial" class="nav-link"><i
+                            class="fab fa-youtube"></i></a>
+                    <a href="https://github.com/VK-Information" class="nav-link"><i class="fab fa-github"></i></a>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- .Header -->
+
+    <!-- Main Site -->
+    <main id="site-main">
+
+        <!-- Post Content -->
+        <section class="container">
+            <article id="post">
+                <!-- article heading -->
+                <div class="headings text-center">
+                    <div style="margin-top: 150px;"></div>
+                    <div class="title">
+                        <h2 class="text-title text-dark display-1">Cipher(Anagrams) in Python3</h2>
+                    </div>
+
+                    <div class="meta">
+                        <p class="link display-2 text-secondary px-1"><i class="fas fa-clock text-primary"></i> Released
+                            Date: 11/26/2022</p>
+                    </div>
+
+                </div>
+
+                <!-- thumbnail  -->
+                <div class="thumbnail mt-3">
+                    <img src="/img/Python/Cipher_Anagrams_Project.jpg" class="thumbnail" alt="Kali-Linux Img">
+                </div>
+
+                <!-- content -->
+                <div class="text-dark display-2 secondary-title mt-3 div container">
+
+                    <h2>Let's get coding done! 💻</h2>
+                    <p>                
+<pre><code class="has-line-data" data-line-start="1" data-line-end="18" class="language-python"><span class="hljs-keyword">from</span> collections <span class="hljs-keyword">import</span> defaultdict
+
+<span class="hljs-comment"># Making an function to group the words which are anagrams of each other.</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">anagrams</span><span class="hljs-params">(words)</span>:</span>
+    df = defaultdict(list) <span class="hljs-comment">#DefaultDict needs to take an datatype, in this case we are using an list</span>
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> words:
+        sort = <span class="hljs-string">" "</span>.join(sorted(i))
+        <span class="hljs-keyword">print</span>(sort)
+        df[sort].append(i)
+        <span class="hljs-keyword">print</span>(sort)
+    <span class="hljs-keyword">print</span>(sort)
+    <span class="hljs-keyword">return</span> df.values()
+<span class="hljs-comment"># TestCase</span>
+words = [<span class="hljs-string">"race"</span>, <span class="hljs-string">"care"</span>, <span class="hljs-string">"part"</span>, <span class="hljs-string">"trap"</span>, <span class="hljs-string">"heart"</span>, <span class="hljs-string">"earth"</span>, <span class="hljs-string">"Listen"</span>, <span class="hljs-string">"Silent"</span>]
+<span class="hljs-keyword">print</span>(anagrams(words))
+</code></pre>
+                    </p>
+                    <br>
+                    <h2> Summary</h2>
+                    <p>
+                        One of the often asked topics in coding interviews is how to group anagrams.
+                        To group all the words that are anagrams of one another, you must create an algorithm in this case.
+                        I hope you enjoyed reading this essay about Python anagram grouping.
+                        Please feel free to post insightful inquiries in the comments area below. 
+                    </p>
+
+                </div>
+            </article>
+
+        </section>
+        <!-- .Post Content -->
+
+    </main>
+    <!-- .Main Site -->
+
+
+    <!-- footer-->
+    <footer id="footer">
+        <!--copyrights-->
+        <div class="copyrights">
+            <p class="text-center text-secondary display-2">
+                © 2022 <a href="#" class="text-primary">VK-Information</a> - Cybersecurity Blog. All rights reserved.
+            </p>
+        </div>
+    </footer>
+    <!-- .footer -->
+
+    <!-- custom javascript main.js file -->
+    <script src="/main.js"></script>
+</body>
+
+</html>
